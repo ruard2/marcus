@@ -490,7 +490,8 @@ let state = {
   completed: storage.read("marcus-completed", []),
   group: null,
   groupPanel: false,
-  groupMessage: ""
+  groupMessage: "",
+  installHelp: false
 };
 let deferredInstall;
 let groupTimer;
@@ -510,9 +511,22 @@ function header() {
   return `<header class="topbar">
     <button class="brand" data-action="home" aria-label="Naar overzicht"><img src="/icon.svg" alt=""><span>Ontdek Marcus</span></button>
     <div class="top-actions">
-      <button class="install" data-action="install" ${deferredInstall ? "" : "hidden"}>Installeer</button>
+      <button class="install" data-action="install">Installeren</button>
     </div>
   </header>`;
+}
+
+function installOverlay() {
+  if (!state.installHelp) return "";
+  return `<div class="overlay" data-action="close-install"><section class="group-panel" role="dialog" aria-modal="true" aria-labelledby="install-title" data-install-dialog>
+    <button class="close-panel" data-action="close-install" aria-label="Sluiten">×</button>
+    <p class="eyebrow">Op je beginscherm</p><h2 id="install-title">Installeer Ontdek Marcus</h2>
+    <div class="install-steps">
+      <div><strong>Firefox op Android</strong><span>Tik op ⋮ en kies <em>Installeren</em>. Zie je dat niet, kies dan <em>Toevoegen aan startscherm</em>.</span></div>
+      <div><strong>Chrome op Android</strong><span>Tik op ⋮ en kies <em>App installeren</em> of <em>Installeren en snelkoppeling maken</em>.</span></div>
+      <div><strong>Safari op iPhone</strong><span>Tik op Delen □↑ en kies <em>Zet op beginscherm</em>.</span></div>
+    </div>
+  </section></div>`;
 }
 
 function groupOverlay() {
@@ -527,7 +541,7 @@ function groupOverlay() {
 function renderHome() {
   state.current = null;
   const percent = Math.round((state.completed.length / passages.length) * 100);
-  app.innerHTML = `<div class="shell">${header()}
+  app.innerHTML = `<div class="shell">${header()}${installOverlay()}
     <section class="hero">
       <div>
         <p class="eyebrow">Marcus 1:1–15 · Avond 1</p>
@@ -554,7 +568,7 @@ function renderStudy() {
   const p = passages.find(item => item.id === state.current) || passages[0];
   const index = passages.indexOf(p);
   const isDone = state.completed.includes(p.id);
-  app.innerHTML = `<div class="shell">${header()}<main class="study">
+  app.innerHTML = `<div class="shell">${header()}${installOverlay()}<main class="study">
     <button class="back" data-action="home">← Terug naar overzicht</button>
     <header class="study-head"><p class="reference">${p.ref}</p><h1>${p.title}</h1><p class="summary">${p.summary}</p></header>
     <section class="translation-stack" aria-label="Bijbelvertalingen">
@@ -672,6 +686,7 @@ function bind() {
   app.querySelectorAll("[data-action]").forEach(button => button.addEventListener("click", async () => {
     const action = button.dataset.action;
     if (action === "group-panel") { state.groupPanel = true; state.groupMessage = ""; return state.current ? renderStudy() : renderHome(); }
+    if (action === "close-install") { state.installHelp = false; return state.current ? renderStudy() : renderHome(); }
     if (action === "close-group") { if (button.hasAttribute("data-group-dialog")) return; state.groupPanel = false; return state.current ? renderStudy() : renderHome(); }
     if (action === "start-group") return startGroup();
     if (action === "join-group") {
@@ -690,9 +705,13 @@ function bind() {
     const index = passages.findIndex(p => p.id === state.current);
     if (action === "previous" && index > 0) return openPassage(passages[index - 1].id);
     if (action === "next" && index < passages.length - 1) return openPassage(passages[index + 1].id);
-    if (action === "install" && deferredInstall) { deferredInstall.prompt(); await deferredInstall.userChoice; deferredInstall = null; state.current ? renderStudy() : renderHome(); }
+    if (action === "install") {
+      if (deferredInstall) { deferredInstall.prompt(); await deferredInstall.userChoice; deferredInstall = null; return state.current ? renderStudy() : renderHome(); }
+      state.installHelp = true; return state.current ? renderStudy() : renderHome();
+    }
   }));
   app.querySelector("[data-group-dialog]")?.addEventListener("click", event => event.stopPropagation());
+  app.querySelector("[data-install-dialog]")?.addEventListener("click", event => event.stopPropagation());
   app.querySelectorAll("[data-vote]").forEach(button => button.addEventListener("click", async () => {
     try {
       state.group = await groupRequest(`/api/group/vote`, { method: "POST", body: JSON.stringify({ clientId, passageId: state.current, questionIndex: Number(button.dataset.vote) }) });

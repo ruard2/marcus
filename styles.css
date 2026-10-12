@@ -56,6 +56,11 @@ button { cursor: pointer; }
 .session-code { margin: 21px 0; padding: 16px; border: 2px dashed var(--clay); border-radius: 15px; color: var(--green); background: #f7f1e8; font-size: 2rem; font-weight: 900; letter-spacing: .18em; text-align: center; }
 .leave-group { color: #8a332d; background: #f5dfdc; }
 .group-message { min-height: 24px; margin-bottom: 0; color: #a03b33 !important; font-size: .9rem; font-weight: 750; }
+.install-steps { display: grid; gap: 12px; margin-top: 21px; }
+.install-steps div { padding: 15px 17px; border: 1px solid var(--line); border-radius: 14px; background: #f7f3ea; }
+.install-steps strong, .install-steps span { display: block; }
+.install-steps strong { color: var(--green); }
+.install-steps span { margin-top: 4px; color: var(--muted); font-size: .92rem; }
 
 .hero { max-width: 1180px; margin: 0 auto; padding: clamp(48px, 9vw, 110px) 24px 42px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 48px; align-items: center; }
 .eyebrow { margin: 0 0 10px; color: var(--clay); font-size: .79rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
