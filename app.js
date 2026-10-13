@@ -568,7 +568,6 @@ function groupOverlay() {
 
 function renderHome() {
   state.current = null;
-  const percent = Math.round((state.completed.length / passages.length) * 100);
   app.innerHTML = `<div class="shell">${header()}${installOverlay()}
     <section class="hero">
       <div>
@@ -579,23 +578,27 @@ function renderHome() {
       <aside class="hero-card"><strong>Centrale vraag</strong><blockquote>God is in Jezus naar jou toe gekomen. Welk antwoord geef jij Hem?</blockquote></aside>
     </section>
     <main class="home">
-      <div class="section-head"><div><p class="eyebrow">Vers voor vers</p><h2>De ontdekroute</h2></div><span class="progress-copy">${state.completed.length} van ${passages.length} afgerond</span></div>
-      <div class="progress-track" aria-label="Voortgang"><div class="progress-fill" style="width:${percent}%"></div></div>
+      <div class="section-head"><div><p class="eyebrow">Vers voor vers</p><h2>De ontdekroute</h2></div></div>
       <div class="cards">${passages.map((p, index) => `<article class="passage-card">
-        <div class="card-top"><span class="number">${index + 1}</span>${state.completed.includes(p.id) ? '<span class="done-mark">✓ Afgerond</span>' : ""}</div>
+        <div class="card-top"><span class="number">${index + 1}</span></div>
         <h3>${p.title}</h3><p>${p.ref} · ${p.summary}</p>
         <button class="open-card" data-open="${p.id}">Open dit gedeelte →</button>
       </article>`).join("")}</div>
     </main>
-    <p class="install-help">Je voortgang en notities blijven alleen op dit apparaat bewaard. Deze app werkt na het eerste bezoek ook offline.</p>
+    <p class="install-help">Je vertaalkeuze en notities blijven alleen op dit apparaat bewaard. Deze app werkt na het eerste bezoek ook offline.</p>
   </div>`;
   bind();
 }
 
+function scriptureContext(activePassage) {
+  return passages.map(p => `<article class="scripture-passage ${p.id === activePassage.id ? "is-active" : ""}" data-context-passage="${p.id}" role="button" tabindex="0" ${p.id === activePassage.id ? 'aria-current="true"' : ""}>
+    <span class="scripture-ref">${p.ref}</span>
+    <p>${translations[p.id][state.translation]}</p>
+  </article>`).join("");
+}
+
 function renderStudy() {
   const p = passages.find(item => item.id === state.current) || passages[0];
-  const index = passages.indexOf(p);
-  const isDone = state.completed.includes(p.id);
   app.innerHTML = `<div class="shell">${header()}${installOverlay()}<main class="study">
     <button class="back" data-action="home">← Terug naar overzicht</button>
     <header class="study-head"><p class="reference">${p.ref}</p><h1>${p.title}</h1><p class="summary">${p.summary}</p></header>
@@ -603,18 +606,15 @@ function renderStudy() {
       <div class="translation-tabs" role="tablist" aria-label="Kies Bijbelvertaling">
         ${Object.keys(translations[p.id]).map(name => `<button role="tab" aria-selected="${state.translation === name ? "true" : "false"}" class="translation-tab ${state.translation === name ? "active" : ""}" data-translation="${name}">${name}</button>`).join("")}
       </div>
-      <article class="translation active-translation"><p>${translations[p.id][state.translation]}</p></article>
+      <div class="scripture-scroll" tabindex="0" aria-label="Marcus 1 in ${state.translation}. Scroll om de verzen ervoor en erna te lezen.">
+        ${scriptureContext(p)}
+      </div>
+      <p class="scroll-cue">Scroll in de tekst om ervoor en erna te lezen</p>
     </section>
     <nav class="tabs" aria-label="Onderdelen">
-      ${[["ontdek","Ontdek"],["doordenk","Denk door"],["uitleg","Uitleg"], ...(quotes[p.id] ? [["quotes","Quotes"]] : []), ["verder","Verder lezen"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
+      ${[["ontdek","Ontdek"],["doordenk","Denk verder"],["uitleg","Uitleg & quotes"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""} ${id === "uitleg" && quotes[p.id] ? "has-extra" : ""}" data-tab="${id}">${label}</button>`).join("")}
     </nav>
     ${state.tab === "tekst" ? "" : `<section class="panel">${panel(p)}</section>`}
-    <footer class="study-footer">
-      <button class="nav-btn" data-action="previous" ${index === 0 ? "disabled" : ""}>← Vorige</button>
-      <button class="nav-btn complete ${isDone ? "is-done" : ""}" data-action="complete">${isDone ? "✓ Afgerond" : "Markeer als afgerond"}</button>
-      <button class="nav-btn" data-action="next" ${index === passages.length - 1 ? "disabled" : ""}>Volgende →</button>
-    </footer>
-    <p class="swipe-hint" aria-hidden="true">← Veeg naar links of rechts om verder te bladeren →</p>
   </main></div>`;
   bind();
 }
@@ -629,10 +629,8 @@ function panel(p) {
       ${visible.map((q, i) => `<div class="question-card vote-question"><div><span class="question-count">VRAAG ${i + 1}</span><p>${q.text}</p></div>${state.group ? voteButton(p.id, q.index) : ""}</div>`).join("")}
       ${!showEverything && p.questions.length > featured.length ? `<button class="reveal" data-action="all-questions">Toon alle ${p.questions.length} vragen</button>` : ""}`;
   }
-  if (state.tab === "doordenk") return `${passageContext[p.id] ? `<aside class="context-card"><span>WAAR ZIJN WE?</span><h3>${passageContext[p.id].title}</h3><p>${passageContext[p.id].text}</p></aside>` : ""}<p class="eyebrow">Laat de stilte werken</p><h2>Maak het persoonlijk</h2><div class="question-card primary"><span class="question-count">INDRINGENDE VRAAG</span><p>${p.primary}</p></div><p>Geef niet te snel zelf antwoord. Vraag door met: <em>“Wat maakt dat je dat zegt?”</em> of <em>“Waar zie je dat in de tekst?”</em></p>${mediaLinks[p.id] ? `<a class="media-link" href="${mediaLinks[p.id].url}" target="_blank" rel="noopener noreferrer"><span class="media-icon">▶</span><span><strong>${mediaLinks[p.id].title}</strong><small>${mediaLinks[p.id].description}</small></span><span class="media-arrow">↗</span></a>` : ""}`;
-  if (state.tab === "uitleg") return `<p class="eyebrow">Na het ontdekken</p><h2>Achtergrond en uitleg</h2>${state.revealed ? `<div class="explanation">${p.explanation}</div>` : `<p>Open de uitleg pas nadat jullie zelf goed hebben gekeken en gedacht.</p><button class="reveal" data-action="reveal">Wij hebben eerst zelf ontdekt — open uitleg</button>`}`;
-  if (state.tab === "quotes") return `<p class="eyebrow">Om te laten landen</p><h2>Quotes en kernzinnen</h2><div class="quotes">${quotes[p.id].map(item => `<blockquote class="quote-card"><p>“${item.text}”</p><cite>${item.source}</cite></blockquote>`).join("")}</div>`;
-  if (state.tab === "verder") return `<p class="eyebrow">De Bijbel legt de Bijbel uit</p><h2>Verder lezen</h2><div class="refs">${p.refs.map(([ref, note]) => `<div class="ref-card"><strong>${ref}</strong><span>${note}</span></div>`).join("")}</div>`;
+  if (state.tab === "doordenk") return `${passageContext[p.id] ? `<aside class="context-card"><span>WAAR ZIJN WE?</span><h3>${passageContext[p.id].title}</h3><p>${passageContext[p.id].text}</p></aside>` : ""}<p class="eyebrow">Laat de stilte werken</p><h2>Maak het persoonlijk</h2><div class="question-card primary"><span class="question-count">INDRINGENDE VRAAG</span><p>${p.primary}</p></div><p>Geef niet te snel zelf antwoord. Vraag door met: <em>“Wat maakt dat je dat zegt?”</em> of <em>“Waar zie je dat in de tekst?”</em></p>${mediaLinks[p.id] ? `<a class="media-link" href="${mediaLinks[p.id].url}" target="_blank" rel="noopener noreferrer"><span class="media-icon">▶</span><span><strong>${mediaLinks[p.id].title}</strong><small>${mediaLinks[p.id].description}</small></span><span class="media-arrow">↗</span></a>` : ""}<div class="panel-divider"></div><p class="eyebrow">De Bijbel legt de Bijbel uit</p><h2>Verder lezen</h2><div class="refs">${p.refs.map(([ref, note]) => `<div class="ref-card"><strong>${ref}</strong><span>${note}</span></div>`).join("")}</div>`;
+  if (state.tab === "uitleg") return `<p class="eyebrow">Na het ontdekken</p><h2>Achtergrond en uitleg</h2>${state.revealed ? `<div class="explanation">${p.explanation}</div>` : `<p>Open de uitleg pas nadat jullie zelf goed hebben gekeken en gedacht.</p><button class="reveal" data-action="reveal">Wij hebben eerst zelf ontdekt — open uitleg</button>`}${quotes[p.id] ? `<div class="panel-divider"></div><p class="eyebrow">Om te laten landen</p><h2>Quotes en kernzinnen</h2><div class="quotes">${quotes[p.id].map(item => `<blockquote class="quote-card"><p>“${item.text}”</p><cite>${item.source}</cite></blockquote>`).join("")}</div>` : ""}`;
   const note = storage.read(`marcus-note-${p.id}`, "");
   return `<p class="eyebrow">Alleen op dit apparaat</p><h2>Notities</h2><p>Wat raakte je, welke vraag bleef hangen en wat wil je onthouden?</p><textarea class="note-area" data-note="${p.id}" placeholder="Schrijf hier je notities…">${escapeHtml(note)}</textarea><p class="note-status" aria-live="polite"></p>`;
 }
@@ -713,6 +711,11 @@ async function joinGlobalGroup() {
 
 function bind() {
   app.querySelectorAll("[data-open]").forEach(button => button.addEventListener("click", () => openPassage(button.dataset.open)));
+  app.querySelectorAll("[data-context-passage]").forEach(passage => {
+    const openFromReader = () => { if (passage.dataset.contextPassage !== state.current) openPassage(passage.dataset.contextPassage); };
+    passage.addEventListener("click", openFromReader);
+    passage.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openFromReader(); } });
+  });
   app.querySelectorAll("[data-tab]").forEach(button => button.addEventListener("click", () => { state.tab = button.dataset.tab; renderStudy(); }));
   app.querySelectorAll("[data-translation]").forEach(button => button.addEventListener("click", () => {
     state.translation = button.dataset.translation;
@@ -734,13 +737,6 @@ function bind() {
     if (action === "home") return renderHome();
     if (action === "reveal") { state.revealed = true; return renderStudy(); }
     if (action === "all-questions") { state.showAllQuestions = true; return renderStudy(); }
-    if (action === "complete") {
-      state.completed = state.completed.includes(state.current) ? state.completed.filter(id => id !== state.current) : [...state.completed, state.current];
-      storage.write("marcus-completed", state.completed); return renderStudy();
-    }
-    const index = passages.findIndex(p => p.id === state.current);
-    if (action === "previous" && index > 0) return openPassage(passages[index - 1].id);
-    if (action === "next" && index < passages.length - 1) return openPassage(passages[index + 1].id);
     if (action === "install") {
       if (deferredInstall) { deferredInstall.prompt(); await deferredInstall.userChoice; deferredInstall = null; return state.current ? renderStudy() : renderHome(); }
       state.installHelp = true; return state.current ? renderStudy() : renderHome();
@@ -765,27 +761,11 @@ function bind() {
       status.textContent = "Opgeslagen op dit apparaat.";
     });
   }
-  const study = app.querySelector(".study");
-  if (study) {
-    let touchStart = null;
-    study.addEventListener("touchstart", event => {
-      if (event.touches.length !== 1 || event.target.closest("button, textarea, input, a, .tabs")) return;
-      const touch = event.touches[0];
-      touchStart = { x: touch.clientX, y: touch.clientY };
-    }, { passive: true });
-    study.addEventListener("touchend", event => {
-      if (!touchStart || event.changedTouches.length !== 1) return;
-      const touch = event.changedTouches[0];
-      const dx = touch.clientX - touchStart.x;
-      const dy = touch.clientY - touchStart.y;
-      touchStart = null;
-      if (Math.abs(dx) < 70 || Math.abs(dx) < Math.abs(dy) * 1.25) return;
-      const index = passages.findIndex(p => p.id === state.current);
-      if (dx < 0 && index < passages.length - 1) openPassage(passages[index + 1].id);
-      if (dx > 0 && index > 0) openPassage(passages[index - 1].id);
-    }, { passive: true });
-    study.addEventListener("touchcancel", () => { touchStart = null; }, { passive: true });
-  }
+  const reader = app.querySelector(".scripture-scroll");
+  const activePassage = reader?.querySelector(".scripture-passage.is-active");
+  if (reader && activePassage) requestAnimationFrame(() => {
+    reader.scrollTop = activePassage.offsetTop - (reader.clientHeight - activePassage.offsetHeight) / 2;
+  });
 }
 
 window.addEventListener("beforeinstallprompt", event => { event.preventDefault(); deferredInstall = event; state.current ? renderStudy() : renderHome(); });
