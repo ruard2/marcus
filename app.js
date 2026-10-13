@@ -95,6 +95,9 @@ const passages = [
       <h3>Het geloofsdoopaccent</h3>
       <p>Voorstanders van de geloofsdoop benadrukken de vaste volgorde die vaak in Handelingen zichtbaar is: het evangelie horen, geloven, zich bekeren en vervolgens gedoopt worden. Zij zien de doop als het openbare antwoord en getuigenis van iemand die Jezus persoonlijk volgt.</p>
       <p>Daarbij worden onder andere Handelingen 2:38, Handelingen 8:36–38 en Romeinen 6:3–4 genoemd. Beide visies willen serieus nemen dat de doop wijst op Gods genade, reiniging, verbondenheid met Christus en een nieuw leven.</p>
+      <h3>Waarom dan toch gereformeerd?</h3>
+      <p>De gereformeerde keuze voor de kinderdoop staat niet op één losse tekst, maar op de doorgaande lijn van <strong>genade en verbond</strong>. God begint: Hij zoekt mensen op, geeft zijn belofte en neemt een volk met hun kinderen apart voordat zij iets kunnen teruggeven. Daarom vertelt de doop allereerst niet hoe krachtig mijn keuze voor God is, maar hoe genadig zijn keuze en belofte zijn. Dat maakt de doop ook minder individualistisch: God verbindt ons aan Christus én aan zijn gemeente. Deze lijn is bovendien geen late gereformeerde uitvinding. De kinderdoop is al vroeg in de kerkgeschiedenis zichtbaar en werd eeuwenlang in het grootste deel van de kerk bediend; de Reformatie heeft haar vanuit genade en verbond opnieuw uitgelegd.</p>
+      <p>Wanneer Handelingen volwassenen oproept zich te bekeren, te geloven en zich te laten dopen, gebeurt dat meestal in een <strong>evangelisatiesituatie</strong>: het evangelie bereikt mensen die nog buiten de christelijke gemeente staan. Gereformeerden nemen die volgorde volledig over voor volwassen nieuwkomers. De vraag rond kinderen is anders: hoe kijkt God naar kinderen die al binnen een gelovig gezin en de gemeente opgroeien? Paulus noemt zelfs de kinderen van één gelovige ouder ‘heilig’—apart gezet voor God (1 Korinthe 7:14). Dat betekent niet dat zij automatisch gered zijn of geen persoonlijk geloof nodig hebben. Wel ondersteunt het de gedachte dat God hen niet behandelt als buitenstaanders, maar hen binnen de kring van zijn verbondsbelofte aanspreekt. De kinderdoop zegt daarom: niet mijn keuze vormt het begin; Gods genade gaat eraan vooraf. Juist daarom blijft de oproep staan om die belofte persoonlijk in geloof te omhelzen.</p>
       <h3>Een eerlijke gespreksvraag</h3>
       <p>Vraag niet alleen: “Welke vorm is juist?”, maar ook: “Wat belooft God in de doop, waartoe roept de doop mij en leef ik werkelijk uit Christus?” Vanuit gereformeerd perspectief mag Gods initiatief duidelijk vooropstaan: Hij spreekt en belooft voordat wij iets kunnen aanbieden.</p>`,
     refs: [
@@ -104,6 +107,7 @@ const passages = [
       ["Genesis 17:7–12", "God geeft het verbondsteken ook aan de kinderen van zijn volk."],
       ["Handelingen 2:38–39", "Bekering, doop en de belofte voor gelovigen en hun kinderen."],
       ["Handelingen 16:14–15, 30–34", "Lydia en de gevangenbewaarder worden met hun huis gedoopt."],
+      ["1 Korinthe 7:14", "Kinderen van een gelovige ouder worden ‘heilig’ genoemd: voor God apart gezet."],
       ["Handelingen 19:1–6", "Het verschil tussen Johannes’ doop en de christelijke doop."],
       ["Romeinen 6:3–4", "De doop en het nieuwe leven met Christus."],
       ["Kolossenzen 2:11–12", "Besnijdenis, begraven worden met Christus en de doop."]
