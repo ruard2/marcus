@@ -541,6 +541,7 @@ let state = {
 };
 let deferredInstall;
 let groupTimer;
+let focusPanelAfterRender = false;
 
 const clientId = (() => {
   const existing = localStorage.getItem("marcus-client-id");
@@ -634,6 +635,11 @@ function renderStudy() {
     ${state.tab === "tekst" ? "" : `<section class="panel">${panel(p)}</section>`}
   </main></div>`;
   bind();
+  if (focusPanelAfterRender) {
+    focusPanelAfterRender = false;
+    const activePanel = app.querySelector(".panel");
+    if (activePanel) requestAnimationFrame(() => activePanel.scrollIntoView({ behavior: "smooth", block: "start" }));
+  }
 }
 
 function panel(p) {
@@ -733,7 +739,11 @@ function bind() {
     passage.addEventListener("click", openFromReader);
     passage.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openFromReader(); } });
   });
-  app.querySelectorAll("[data-tab]").forEach(button => button.addEventListener("click", () => { state.tab = button.dataset.tab; renderStudy(); }));
+  app.querySelectorAll("[data-tab]").forEach(button => button.addEventListener("click", () => {
+    state.tab = button.dataset.tab;
+    focusPanelAfterRender = true;
+    renderStudy();
+  }));
   app.querySelectorAll("[data-translation]").forEach(button => button.addEventListener("click", () => {
     state.translation = button.dataset.translation;
     storage.write("marcus-translation", state.translation);

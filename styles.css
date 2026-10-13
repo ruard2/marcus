@@ -135,7 +135,7 @@ h1 { margin: 0; max-width: 760px; font-size: clamp(3.2rem, 8vw, 6.6rem); }
 .tab { min-width: 0; padding: 11px 9px; border: 1px solid var(--line); border-radius: 15px; color: var(--green); background: rgba(255,255,255,.82); font-size: .85rem; font-weight: 800; line-height: 1.18; }
 .tab.active { color: #fff; border-color: var(--green); background: var(--green); }
 .tab.has-extra:not(.active)::after { display: inline-block; width: 6px; height: 6px; margin: 0 0 2px 7px; border-radius: 50%; background: var(--gold); content: ""; }
-.panel { min-height: 370px; margin-top: 16px; padding: clamp(22px, 5vw, 42px); border: 1px solid var(--line); border-radius: 28px; background: var(--card); box-shadow: var(--shadow); }
+.panel { min-height: 370px; margin-top: 16px; padding: clamp(22px, 5vw, 42px); scroll-margin-top: 82px; scroll-margin-bottom: 100px; border: 1px solid var(--line); border-radius: 28px; background: var(--card); box-shadow: var(--shadow); }
 .panel h2 { margin: 0 0 22px; font-size: clamp(1.8rem, 4vw, 2.8rem); }
 .question-card { margin: 16px 0; padding: 18px 20px; border-radius: 16px; background: #f1eee6; }
 .question-card.primary { color: #fff; background: var(--green); }
@@ -185,13 +185,23 @@ h1 { margin: 0; max-width: 760px; font-size: clamp(3.2rem, 8vw, 6.6rem); }
   .hero { padding-top: 50px; }
   .cards { grid-template-columns: 1fr; }
   .passage-card { min-height: 205px; }
+  .study { padding-top: 14px; }
+  .back { padding: 5px 0; font-size: .86rem; }
+  .study-head { margin: 13px 0 15px; }
+  .book-path { display: none; }
+  .reference { margin: 0 0 3px; font-size: .72rem; }
+  .study-head h1 { font-size: clamp(2rem, 10vw, 2.65rem); }
+  .summary { display: -webkit-box; margin: 7px 0 0; overflow: hidden; font-size: .91rem; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .translation-reader { margin: 15px 0 10px; }
+  .translation-tab { padding: 7px 14px 8px; }
+  .scroll-cue { margin-top: 6px; font-size: .72rem; }
   .route-item { grid-template-columns: 44px 1fr auto; gap: 12px; padding-right: 8px; }
   .route-number { width: 42px; height: 42px; }
   .route-copy strong { font-size: 1.2rem; }
   .route-copy > span { display: none; }
   .tabs { right: 7px; bottom: max(7px, env(safe-area-inset-bottom)); left: 7px; width: calc(100% - 14px); gap: 4px; padding: 6px; border-radius: 18px; }
   .tab { padding: 10px 3px; border-radius: 12px; font-size: .7rem; }
-  .panel { border-radius: 20px; }
+  .panel { border-radius: 20px; scroll-margin-top: 67px; }
   .scripture-scroll { height: clamp(235px, 34vh, 320px); padding-inline: 10px; }
   .scripture-passage { padding: 16px 15px; }
 }
