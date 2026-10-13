@@ -606,7 +606,7 @@ function renderStudy() {
       <article class="translation active-translation"><p>${translations[p.id][state.translation]}</p></article>
     </section>
     <nav class="tabs" aria-label="Onderdelen">
-      ${[["tekst","Tekst"],["ontdek","Ontdek"],["doordenk","Denk door"],["uitleg","Uitleg"], ...(quotes[p.id] ? [["quotes","Quotes"]] : []), ["verder","Verder lezen"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
+      ${[["ontdek","Ontdek"],["doordenk","Denk door"],["uitleg","Uitleg"], ...(quotes[p.id] ? [["quotes","Quotes"]] : []), ["verder","Verder lezen"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
     </nav>
     ${state.tab === "tekst" ? "" : `<section class="panel">${panel(p)}</section>`}
     <footer class="study-footer">
