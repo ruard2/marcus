@@ -56,6 +56,13 @@ button { cursor: pointer; }
 .session-code { margin: 21px 0; padding: 16px; border: 2px dashed var(--clay); border-radius: 15px; color: var(--green); background: #f7f1e8; font-size: 2rem; font-weight: 900; letter-spacing: .18em; text-align: center; }
 .leave-group { color: #8a332d; background: #f5dfdc; }
 .group-message { min-height: 24px; margin-bottom: 0; color: #a03b33 !important; font-size: .9rem; font-weight: 750; }
+.theme-panel { position: relative; width: min(760px, 100%); max-height: min(86vh, 820px); padding: clamp(24px, 5vw, 42px); overflow-y: auto; border-radius: 26px; background: var(--card); box-shadow: 0 30px 90px rgba(0,0,0,.34); }
+.theme-panel > h2 { max-width: 650px; margin: 0 44px 8px 0; font-size: clamp(2rem, 5vw, 3.3rem); }
+.theme-intro { margin: 0 0 28px; color: var(--muted); font-weight: 650; }
+.theme-content h3 { margin: 28px 0 9px; font-size: 1.35rem; }
+.theme-content p { color: #304744; }
+.theme-content ul { padding-left: 22px; }
+.theme-content li { margin: 7px 0; }
 .install-steps { display: grid; gap: 12px; margin-top: 21px; }
 .install-steps div { padding: 15px 17px; border: 1px solid var(--line); border-radius: 14px; background: #f7f3ea; }
 .install-steps strong, .install-steps span { display: block; }
@@ -160,6 +167,12 @@ h1 { margin: 0; max-width: 760px; font-size: clamp(3.2rem, 8vw, 6.6rem); }
 .quote-card { margin: 0; padding: 23px 25px; border-left: 5px solid var(--gold); border-radius: 0 18px 18px 0; background: #f4efe5; }
 .quote-card p { margin: 0; font: 1.25rem/1.5 Georgia, serif; }
 .quote-card cite { display: block; margin-top: 13px; color: var(--muted); font-size: .86rem; font-style: normal; font-weight: 750; }
+.theme-buttons { display: grid; gap: 11px; margin-top: 28px; }
+.theme-button { display: flex; align-items: center; justify-content: space-between; gap: 18px; width: 100%; padding: 17px 19px; border: 1px solid #bfd4cf; border-radius: 16px; color: var(--green); background: #e6f0ed; text-align: left; }
+.theme-button span, .theme-button small, .theme-button strong { display: block; }
+.theme-button small { color: var(--clay); font-size: .68rem; font-weight: 900; letter-spacing: .12em; }
+.theme-button strong { margin-top: 2px; font-size: .98rem; }
+.theme-button b { flex: 0 0 auto; font-size: .78rem; }
 .media-link { display: flex; align-items: center; gap: 15px; margin-top: 24px; padding: 18px 20px; color: var(--ink); border: 1px solid var(--line); border-radius: 17px; background: #f4efe5; text-decoration: none; transition: transform .2s, box-shadow .2s; }
 .media-link:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(23,61,58,.10); }
 .media-icon { display: grid; flex: 0 0 42px; width: 42px; height: 42px; place-items: center; padding-left: 2px; color: #fff; border-radius: 50%; background: #c64035; }
@@ -202,6 +215,8 @@ h1 { margin: 0; max-width: 760px; font-size: clamp(3.2rem, 8vw, 6.6rem); }
   .tabs { right: 7px; bottom: max(7px, env(safe-area-inset-bottom)); left: 7px; width: calc(100% - 14px); gap: 4px; padding: 6px; border-radius: 18px; }
   .tab { padding: 10px 3px; border-radius: 12px; font-size: .7rem; }
   .panel { border-radius: 20px; scroll-margin-top: 67px; }
+  .theme-panel { max-height: 91vh; padding: 24px 21px 32px; border-radius: 21px; }
+  .theme-panel > h2 { font-size: 2rem; }
   .scripture-scroll { height: clamp(235px, 34vh, 320px); padding-inline: 10px; }
   .scripture-passage { padding: 16px 15px; }
 }

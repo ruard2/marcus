@@ -7,11 +7,9 @@ const passages = [
     verse: "Het begin van het goede nieuws over Jezus Christus, de Zoon van God.",
     primary: "Is Jezus voor jou werkelijk goed nieuws — en waar blijkt dat uit?",
     questions: [
-      "Welke woorden of titels gebruikt Marcus voor Jezus?",
+      "Welke namen en titels gebruikt Marcus voor Jezus, en wat zeggen die over Hem?",
       "Wat is het verschil tussen goed nieuws en goed advies?",
-      "Welk goede nieuws brengt Jezus concreet?",
-      "Kun je het evangelie kennen zonder dat je het als goed nieuws ervaart?",
-      "Wat zou er in jouw leven veranderen als dit nieuws werkelijk waar is?",
+      "Wat heeft Jezus gedaan waardoor zijn komst werkelijk goed nieuws is?",
       "Geef in één of twee zinnen een samenvatting van het goede nieuws."
     ],
     explanation: `
@@ -38,12 +36,10 @@ const passages = [
     verse: "Er klinkt een stem in de woestijn: maak de weg van de Heer gereed.",
     primary: "Als God werkelijk naar jou toe komt, wat moet er dan in jouw leven voor Hem worden klaargemaakt?",
     questions: [
-      "Wie wordt er verwacht en wie moet de weg voorbereiden?",
-      "Voor wie wordt volgens de profeten de weg klaargemaakt?",
-      "Wat zegt het over Jezus dat Marcus deze woorden op Hem toepast?",
-      "Waarom zou God zijn komst eeuwen van tevoren bekendmaken?",
-      "Welke hindernis ligt er in jouw leven op de weg tussen God en jou?",
-      "Hoe zouden we moeten toetsen of iemand werkelijk namens God profeteert?"
+      "Wie is de boodschapper en voor wie moet hij de weg klaarmaken?",
+      "Wat valt je op aan het feit dat Marcus begint met eeuwenoude beloften?",
+      "De oorspronkelijke profetieën spreken over de komst van God. Wat zegt het dat Marcus ze op Jezus toepast?",
+      "Wat betekent het volgens deze verzen om ‘de weg van de Heer gereed te maken’?"
     ],
     explanation: `
       <h3>Drie oude teksten</h3>
@@ -51,8 +47,7 @@ const passages = [
       <p>De oorspronkelijke teksten gaan over God die naar zijn volk komt. Marcus past ze toe op Jezus. Daarmee zegt hij indirect iets groots: in Jezus komt God zelf naar zijn volk.</p>
       <h3>Een nieuw begin</h3>
       <p>De woestijn, de weg en het water herinneren aan Israëls uittocht. Jezus brengt een nieuw begin en een nieuwe bevrijding.</p>
-      <h3>Profetie toen en nu</h3>
-      <p>Bijbelse profetie is meer dan de toekomst voorspellen. Een profeet spreekt namens God, maakt zijn wil bekend, roept mensen terug en kan toekomstige gebeurtenissen aankondigen. Christenen denken verschillend over profetie vandaag. Het Nieuwe Testament roept op profetie niet te verachten, maar alles te toetsen. Een hedendaagse boodschap staat nooit boven de Bijbel en brengt geen ander evangelie.</p>`,
+      <p>Wil je verder nadenken over profetie vandaag? Open dan het themastuk onder deze uitleg.</p>`,
     refs: [
       ["Exodus 23:20", "God stuurt een bode voor zijn volk uit."],
       ["Maleachi 3:1; 4:5–6", "Een boodschapper bereidt Gods komst voor."],
@@ -70,16 +65,12 @@ const passages = [
     verse: "Johannes predikte een doop van bekering tot vergeving van zonden.",
     primary: "Ben jij bekeerd? Waarom denk je van wel of niet?",
     questions: [
-      "Wat betekent bekering volgens jou?",
-      "Waarvan keren deze mensen zich af en waarnaartoe keren zij zich?",
-      "Wat maakt de doop hier zichtbaar en waarom hoort die bij bekering en vergeving?",
-      "Waarom dopen gereformeerde kerken ook kinderen, terwijl andere kerken alleen mensen dopen die zelf hun geloof belijden?",
-      "Is de doop vooral een uitspraak van de mens of eerst een teken van Gods belofte? Wat zou elke visie benadrukken?",
-      "Is bekering hetzelfde als spijt hebben?",
+      "Welke vier dingen worden in dit vers met elkaar verbonden: bekering, doop, vergeving en zonde?",
+      "Wat is bekering, en waarom is dat meer dan alleen spijt hebben?",
       "Kun je christelijk opgevoed zijn zonder zelf bekeerd te zijn?",
-      "Kun je bekeerd zijn als er niets in je levensrichting verandert?",
-      "Is bekering één moment of ook een levenslang proces?",
-      "Waarvan zou jij je concreet moeten afkeren? Wat houdt je tegen?"
+      "Wat maakt de doop zichtbaar over zonde, reiniging en nieuw leven?",
+      "Waarom past de geloofsdoop goed bij mensen die door evangelisatie tot geloof komen, en waarom dopen gereformeerde kerken ook de kinderen van gelovigen?",
+      "Spreekt de doop allereerst over mijn keuze voor God, of over Gods belofte aan mij? Wat is het verschil?"
     ],
     explanation: `
       <h3>Een andere richting</h3>
@@ -88,18 +79,7 @@ const passages = [
       <p>Er is een beslissende omkeer naar God, maar een christen blijft zich daarna van concrete zonden bekeren.</p>
       <h3>Johannes’ doop</h3>
       <p>Johannes’ doop bereidde Israël voor op Jezus en is niet precies hetzelfde als de christelijke doop die Jezus later instelt. Johannes roept mensen tot bekering; de christelijke doop wordt later bediend in de naam van de Vader, de Zoon en de Heilige Geest en verbindt de dopeling zichtbaar met Christus en zijn gemeente.</p>
-      <p>Daarom beslist Marcus 1:4 niet rechtstreeks de discussie tussen kinderdoop en geloofsdoop. Het gedeelte biedt wél een goede ingang om te bespreken wat de doop betekent.</p>
-      <h3>Het gereformeerde accent</h3>
-      <p>In de gereformeerde traditie is de doop allereerst een teken en zegel van <strong>Gods belofte</strong>, niet van de kracht van ons geloof. Zoals kinderen in het Oude Testament bij Gods verbond hoorden, worden ook de kinderen van gelovigen tot de zichtbare verbondsgemeenschap gerekend. Zij ontvangen het teken, terwijl zij later zelf tot geloof en bekering worden geroepen.</p>
-      <p>Daarbij worden onder andere Genesis 17:7, Handelingen 2:39, de huisdoop in Handelingen 16 en Kolossenzen 2:11–12 genoemd. De doop redt niet automatisch en vervangt persoonlijk geloof niet. Een gedoopt kind moet Christus zelf leren vertrouwen.</p>
-      <h3>Het geloofsdoopaccent</h3>
-      <p>Voorstanders van de geloofsdoop benadrukken de vaste volgorde die vaak in Handelingen zichtbaar is: het evangelie horen, geloven, zich bekeren en vervolgens gedoopt worden. Zij zien de doop als het openbare antwoord en getuigenis van iemand die Jezus persoonlijk volgt.</p>
-      <p>Daarbij worden onder andere Handelingen 2:38, Handelingen 8:36–38 en Romeinen 6:3–4 genoemd. Beide visies willen serieus nemen dat de doop wijst op Gods genade, reiniging, verbondenheid met Christus en een nieuw leven.</p>
-      <h3>Waarom dan toch gereformeerd?</h3>
-      <p>De gereformeerde keuze voor de kinderdoop staat niet op één losse tekst, maar op de doorgaande lijn van <strong>genade en verbond</strong>. God begint: Hij zoekt mensen op, geeft zijn belofte en neemt een volk met hun kinderen apart voordat zij iets kunnen teruggeven. Daarom vertelt de doop allereerst niet hoe krachtig mijn keuze voor God is, maar hoe genadig zijn keuze en belofte zijn. Dat maakt de doop ook minder individualistisch: God verbindt ons aan Christus én aan zijn gemeente. Deze lijn is bovendien geen late gereformeerde uitvinding. De kinderdoop is al vroeg in de kerkgeschiedenis zichtbaar en werd eeuwenlang in het grootste deel van de kerk bediend; de Reformatie heeft haar vanuit genade en verbond opnieuw uitgelegd.</p>
-      <p>Wanneer Handelingen volwassenen oproept zich te bekeren, te geloven en zich te laten dopen, gebeurt dat meestal in een <strong>evangelisatiesituatie</strong>: het evangelie bereikt mensen die nog buiten de christelijke gemeente staan. Gereformeerden nemen die volgorde volledig over voor volwassen nieuwkomers. De vraag rond kinderen is anders: hoe kijkt God naar kinderen die al binnen een gelovig gezin en de gemeente opgroeien? Paulus noemt zelfs de kinderen van één gelovige ouder ‘heilig’—apart gezet voor God (1 Korinthe 7:14). Dat betekent niet dat zij automatisch gered zijn of geen persoonlijk geloof nodig hebben. Wel ondersteunt het de gedachte dat God hen niet behandelt als buitenstaanders, maar hen binnen de kring van zijn verbondsbelofte aanspreekt. De kinderdoop zegt daarom: niet mijn keuze vormt het begin; Gods genade gaat eraan vooraf. Juist daarom blijft de oproep staan om die belofte persoonlijk in geloof te omhelzen.</p>
-      <h3>Een eerlijke gespreksvraag</h3>
-      <p>Vraag niet alleen: “Welke vorm is juist?”, maar ook: “Wat belooft God in de doop, waartoe roept de doop mij en leef ik werkelijk uit Christus?” Vanuit gereformeerd perspectief mag Gods initiatief duidelijk vooropstaan: Hij spreekt en belooft voordat wij iets kunnen aanbieden.</p>`,
+      <p>Daarom beslist Marcus 1:4 niet rechtstreeks de discussie tussen kinderdoop en geloofsdoop. Het gedeelte biedt wél een goede ingang om te bespreken wat de doop betekent. Open daarvoor het themastuk onder deze uitleg.</p>`,
     refs: [
       ["2 Korinthe 7:10", "Verdriet naar Gods wil brengt bekering voort."],
       ["Handelingen 26:20", "Bekering krijgt passende daden."],
@@ -119,14 +99,12 @@ const passages = [
     title: "Zonden belijden",
     summary: "Bekering blijft niet vaag: mensen erkennen eerlijk wat verkeerd is.",
     verse: "De mensen werden gedoopt terwijl zij hun zonden beleden.",
-    primary: "Welke zonde houd jij liever verborgen dan dat je haar eerlijk aan God belijdt?",
+    primary: "Wat maakt het voor jou moeilijk om tegenover God werkelijk eerlijk te zijn? Je hoeft geen persoonlijke details in de groep te vertellen.",
     questions: [
       "Wat doen de mensen terwijl zij worden gedoopt?",
-      "Waarom is ‘ik doe ook weleens iets verkeerd’ nog geen echte belijdenis?",
-      "Wat is het verschil tussen betrapt worden en werkelijk zonde belijden?",
-      "Waarom verbergen mensen hun zonden?",
-      "Aan wie moet je zonde belijden: aan God, aan mensen of aan allebei?",
-      "Wat zou het je kosten om eerlijk te worden — en wat zou het je opleveren?"
+      "Wat is het verschil tussen vaag zeggen dat je fouten maakt en werkelijk zonde belijden?",
+      "Waarom proberen mensen hun zonden te verbergen of goed te praten?",
+      "Jakobus zegt: ‘Belijd elkaar uw overtredingen.’ Wanneer is alleen bidden tot God niet genoeg, maar moet je ook eerlijk worden tegenover een ander?"
     ],
     explanation: `
       <h3>In het licht komen</h3>
@@ -149,12 +127,9 @@ const passages = [
     primary: "Wil jij dat Jezus groter wordt, ook als jij daardoor zelf minder belangrijk lijkt?",
     questions: [
       "Wat valt op aan Johannes’ kleding, eten en woorden?",
-      "Aan welke profeet doet hij denken?",
-      "Had Johannes reden om trots te zijn?",
-      "Waarom gebruikt hij zijn populariteit niet voor zichzelf?",
-      "Hoe herken je een goede geestelijke leider?",
-      "Kun je Jezus dienen en ondertussen vooral zelf gezien willen worden?",
-      "Zou jij gehoorzamen als dat comfort of populariteit kost?"
+      "Waarom lijkt Johannes op de profeet Elia?",
+      "Johannes trekt veel mensen, maar wijst toch van zichzelf af. Waar zie je dat aan?",
+      "Hoe herken je een geestelijke leider die werkelijk naar Jezus wijst?"
     ],
     explanation: `
       <h3>Een Elia-figuur</h3>
@@ -180,21 +155,16 @@ const passages = [
     primary: "Woont en werkt de Heilige Geest werkelijk in jou — en waaraan is dat te merken?",
     questions: [
       "Wat kan Johannes doen en wat kan alleen Jezus doen?",
-      "Waarom hebben mensen de Heilige Geest nodig?",
+      "Wat betekent het dat Jezus mensen met de Heilige Geest doopt?",
       "Is de Heilige Geest vooral een gevoel, een kracht of een Persoon?",
-      "Hoe kun je weten of de Heilige Geest in je woont?",
       "Moet je daarvoor een bijzondere ervaring hebben gehad?",
-      "Wat zegt meer: een bijzondere gave of een veranderd karakter?",
-      "Welke vrucht van de Geest zie je bij jezelf groeien?"
+      "Wat zegt meer over het werk van de Geest: een spectaculaire gave of groei in liefde, gehoorzaamheid en karakter?"
     ],
     explanation: `
       <h3>Wat Jezus geeft</h3>
       <p>Johannes kan uiterlijk met water dopen; Jezus kan vanbinnen nieuw leven geven. De belofte wordt herhaald vóór Pinksteren en zichtbaar vervuld in Handelingen 2.</p>
       <p>De Geest overtuigt van zonde, geeft nieuw leven, verbindt gelovigen, woont in hen, verheerlijkt Jezus, vormt zijn vrucht en geeft kracht en gaven om te dienen.</p>
-      <h3>Hoe weet je het?</h3>
-      <p>Christelijke tradities leggen het moment en de ervaring van de Geestesdoop verschillend uit. Sommige verbinden haar direct aan bekering en geloof; andere verwachten daarnaast een herkenbare vervulling of toerusting.</p>
-      <p>Het Nieuwe Testament wijst niet alleen op een ervaring. Kenmerken zijn: Jezus als Heer belijden, op Hem vertrouwen, tegen zonde strijden, groeien in liefde en andere vrucht, weten dat je Gods kind bent en kracht ontvangen om te getuigen en dienen. Gelovigen worden bovendien steeds opnieuw opgeroepen zich door de Geest te laten vervullen.</p>
-      <p>Een spectaculaire ervaring zonder liefde, gehoorzaamheid of vrucht is geen bewijs van geestelijke volwassenheid.</p>`,
+      <p>Het Nieuwe Testament wijst niet alleen op een ervaring. De Geest laat mensen Jezus als Heer belijden, vormt zijn vrucht en geeft kracht en gaven om te dienen. Open het themastuk voor de verschillende visies op de doop met de Heilige Geest.</p>`,
     refs: [
       ["Handelingen 1:5, 8; 2:1–4", "Belofte, kracht en vervulling met de Geest."],
       ["Johannes 3:5–8; 16:8", "Nieuw leven en overtuiging van zonde."],
@@ -210,27 +180,28 @@ const passages = [
     title: "Jezus tussen zondaren",
     summary: "De zondeloze Jezus blijft niet op afstand, maar gaat in het water tussen schuldige mensen staan.",
     verse: "Jezus kwam uit Nazaret en liet zich door Johannes dopen in de Jordaan.",
-    primary: "Waarom gaat de zondeloze Jezus tussen schuldige mensen staan?",
+    primary: "Jezus gaat tussen schuldige mensen staan. Durf jij als iemand die Hem nodig heeft naast hen te gaan staan?",
     questions: [
       "Wat is vreemd aan het feit dat Jezus zich laat dopen?",
-      "Had Jezus zelf bekering of vergeving nodig?",
-      "Waarom laat Hij zich dan toch dopen?",
-      "Wat zegt dit over het soort Redder dat Jezus is?",
-      "Wat betekent het dat Hij zich niet op afstand van zondaren houdt?",
-      "Laat jij je door Hem redden, of probeer je jezelf tegenover God te bewijzen?"
+      "Als Jezus geen zonde of vergeving nodig heeft, waarom gaat Hij dan toch het water in?",
+      "Wat betekent het dat Jezus zich tussen mensen plaatst die hun zonden belijden?",
+      "Hoe wijst de christelijke doop op sterven en opstaan met Christus?"
     ],
     explanation: `
       <h3>Geen eigen zonde</h3>
       <p>Jezus heeft geen zonde die Hij moet belijden. Toch gaat Hij tussen zondige mensen staan en identificeert Hij zich met de mensen die Hij komt redden.</p>
       <p>Matteüs vermeldt Jezus’ antwoord dat het zo past om alle gerechtigheid te vervullen. Hij begint zijn openbare bediening in gehoorzaamheid aan zijn Vader.</p>
       <h3>Vooruitwijzing</h3>
-      <p>Zijn doop wijst vooruit naar zijn volledige vereenzelviging met zondaren aan het kruis. Hij wordt onder overtreders gerekend en draagt wat zij niet zelf kunnen dragen. Jezus redt niet op veilige afstand: Hij komt naast schuldige mensen staan en neemt uiteindelijk hun plaats in.</p>`,
+      <p>Zijn doop wijst vooruit naar zijn volledige vereenzelviging met zondaren aan het kruis. Hij wordt onder overtreders gerekend en draagt wat zij niet zelf kunnen dragen. Jezus redt niet op veilige afstand: Hij komt naast schuldige mensen staan en neemt uiteindelijk hun plaats in.</p>
+      <h3>Ondergaan en opstaan</h3>
+      <p>In de christelijke doop krijgt het water daarom een diepe symboliek. Het ondergaan in het water beeldt begraven worden met Christus uit; het opkomen wijst op opstaan met Hem tot een nieuw leven (Romeinen 6:3–4; Kolossenzen 2:12). De kracht zit niet in de hoeveelheid water of in onze prestatie, maar in Christus’ werk waarnaar de doop verwijst.</p>`,
     refs: [
       ["Matteüs 3:13–15", "Jezus wil alle gerechtigheid vervullen."],
       ["Hebreeën 4:15; 1 Petrus 2:22", "Jezus werd verzocht, maar zondigde niet."],
       ["Jesaja 53:12", "Hij werd onder de overtreders gerekend."],
       ["2 Korinthe 5:21", "De zondeloze werd voor ons tot zonde gemaakt."],
-      ["Marcus 10:38", "Jezus spreekt over zijn lijden als een doop."]
+      ["Marcus 10:38", "Jezus spreekt over zijn lijden als een doop."],
+      ["Romeinen 6:3–4; Kolossenzen 2:12", "De christelijke doop beeldt begraven worden en opstaan met Christus uit."]
     ]
   },
   {
@@ -241,12 +212,10 @@ const passages = [
     verse: "De Geest daalde op Jezus neer en een stem zei: U bent Mijn geliefde Zoon; in U vind Ik vreugde.",
     primary: "Als jouw identiteit niet door prestaties of meningen werd bepaald, maar door je verhouding tot God, wat zou er veranderen?",
     questions: [
-      "Welke drie Personen zien of horen we in deze verzen?",
-      "Wat doet de Vader, de Zoon en de Geest?",
-      "Hoe helpt dit gedeelte ons nadenken over de drie-eenheid?",
+      "Welke drie Personen zien of horen we, en wat doet ieder van hen?",
+      "Wat leren deze verzen ons over de drie-enige God?",
       "Waarom spreekt de Vader vóór Jezus’ wonderen en onderwijs?",
-      "Waarop rust jouw identiteit en wanneer voel jij je waardevol?",
-      "Mag jij deze woorden zomaar rechtstreeks op jezelf toepassen?",
+      "Gelden de woorden ‘Mijn geliefde Zoon’ op precies dezelfde manier voor Jezus en voor ons?",
       "Hoe kan iemand werkelijk een kind van God worden?"
     ],
     explanation: `
@@ -276,13 +245,11 @@ const passages = [
     verse: "De Geest dreef Jezus de woestijn in, waar Hij door de satan werd verzocht.",
     primary: "Blijf je geloven dat God van je houdt wanneer Hij je niet uit de moeilijke situatie haalt?",
     questions: [
-      "Wie brengt Jezus naar de woestijn en wanneer gebeurt dit?",
+      "Wie brengt Jezus naar de woestijn, en wat heeft de Vader vlak daarvoor over Hem gezegd?",
       "Waarom is de volgorde na ‘Mijn geliefde Zoon’ belangrijk?",
       "Betekent Gods liefde dat je leven gemakkelijk zal zijn?",
       "Wat is het verschil tussen beproeving en verleiding tot zonde?",
-      "Welke leugens geloof je snel wanneer je bang of alleen bent?",
-      "Hoe reageert Jezus volgens Matteüs en Lucas op de verzoekingen?",
-      "Kan de woestijn ook een plaats worden waar je leert vertrouwen?"
+      "Wat vertellen de wilde dieren én de dienende engelen samen over Jezus’ situatie?"
     ],
     explanation: `
       <h3>Geliefd én beproefd</h3>
@@ -310,12 +277,10 @@ const passages = [
     verse: "Nadat Johannes was overgeleverd, ging Jezus naar Galilea en verkondigde Gods goede nieuws.",
     primary: "Zou jij Jezus blijven volgen en over Hem spreken als dat je veiligheid of populariteit kost?",
     questions: [
-      "Wat is er met Johannes gebeurd en waarom vertelt Marcus dit hier?",
-      "Waarom voorkomt God zijn arrestatie niet?",
-      "Betekent goed nieuws dat het leven van de boodschapper goed afloopt?",
-      "Wat doet Jezus wanneer Johannes gevangen wordt?",
-      "Welke delen van je geloof durf je tegenover vrienden niet te laten zien?",
-      "Is Jezus het volgen nog waard wanneer je er iets door verliest?"
+      "Wat gebeurt er met Johannes, en wat doet Jezus vervolgens?",
+      "Welke tegenstelling zie je tussen de gevangengenomen boodschapper en het doorgaande goede nieuws?",
+      "Waarom betekent ‘goed nieuws’ niet automatisch dat het leven van de boodschapper gemakkelijk afloopt?",
+      "Marcus gebruikt hier het woord ‘overgeleverd’. Waar zou dat in Jezus’ eigen verhaal naar vooruitwijzen?"
     ],
     explanation: `
       <h3>Geen veilige wereld</h3>
@@ -339,13 +304,11 @@ const passages = [
     verse: "De tijd is vervuld. Gods Koninkrijk is dichtbij gekomen. Bekeer je en geloof het goede nieuws.",
     primary: "Wie is werkelijk koning over jouw leven: God of jijzelf?",
     questions: [
-      "Wat bedoelt Jezus met ‘de tijd is vervuld’ en waarom zou je je antwoord niet uitstellen?",
+      "Welke twee mededelingen en welke twee opdrachten geeft Jezus?",
+      "Wat bedoelt Jezus met ‘de tijd is vervuld’?",
       "Wat is Gods Koninkrijk en wat verandert er wanneer God regeert?",
       "Is het Koninkrijk er nu al of komt het later?",
-      "Op welk terrein van je leven wil jij zelf de baas blijven?",
-      "Waarom horen bekering en geloof bij elkaar?",
-      "Wat is het verschil tussen weten dat Jezus bestaat en je aan Hem toevertrouwen?",
-      "Wat vraagt Jezus nu concreet van jou?"
+      "Waarom horen bekering en geloof bij elkaar, en waarom is geloof meer dan weten dat Jezus bestaat?"
     ],
     explanation: `
       <h3>De tijd is vervuld</h3>
@@ -353,6 +316,8 @@ const passages = [
       <h3>Gods Koninkrijk</h3>
       <p>Gods Koninkrijk is allereerst zijn koningschap: Hij komt regeren, herstellen en het kwaad terugdringen. In Jezus wordt dat zichtbaar wanneer zonden worden vergeven, zieken genezen, kwade machten wijken, buitengesloten mensen worden ontvangen en levens vernieuwd worden.</p>
       <p>Het Koninkrijk is al begonnen, maar nog niet voltooid. Nu is er al nieuw leven; tegelijk wachten we nog op de volledige overwinning en vernieuwing van de schepping. Het betekent dus niet alleen later naar de hemel gaan, maar nu al onder Gods regering komen.</p>
+      <h3>D-Day en V-Day</h3>
+      <p>Een bruikbaar beeld komt uit de Tweede Wereldoorlog. Op <strong>D-Day</strong> werd de beslissende doorbraak bevochten, terwijl <strong>V-Day</strong>—de dag van de uiteindelijke overwinning—nog moest komen. Zo heeft Jezus door zijn komst, kruis en opstanding de beslissende overwinning behaald. Het Koninkrijk is werkelijk begonnen, maar zonde, lijden en dood zijn nog niet overal verdwenen. Bij zijn terugkomst wordt zichtbaar wat al beslist is: God vernieuwt alles. Het beeld is niet volmaakt, maar helpt begrijpen hoe Gods Koninkrijk tegelijk ‘al’ en ‘nog niet’ aanwezig kan zijn.</p>
       <h3>Bekeer je en geloof</h3>
       <p>Bekering is je afkeren van zonde en zelfbestuur. Geloof is meer dan feiten aannemen: het is jezelf aan Jezus toevertrouwen, op zijn woorden bouwen en Hem volgen. Je keert je ergens van af en naar Iemand toe.</p>
       <h3>God begint</h3>
@@ -429,17 +394,17 @@ const translations = {
 };
 
 const featuredQuestions = {
-  "1": [0, 5, 4],
-  "2-3": [0, 2, 4],
-  "4": [0, 2, 3],
-  "5": [0, 2, 4],
-  "6-7": [0, 3, 5],
-  "8": [0, 3, 5],
-  "9": [0, 2, 5],
-  "10-11": [0, 3, 5],
-  "12-13": [0, 2, 5],
-  "14": [0, 2, 5],
-  "15": [0, 1, 6]
+  "1": [0, 1, 3],
+  "2-3": [0, 2, 3],
+  "4": [0, 2, 4],
+  "5": [0, 1, 3],
+  "6-7": [0, 2, 3],
+  "8": [0, 2, 4],
+  "9": [0, 1, 3],
+  "10-11": [0, 2, 4],
+  "12-13": [0, 1, 4],
+  "14": [0, 1, 3],
+  "15": [0, 2, 4]
 };
 
 const quotes = {
@@ -506,6 +471,57 @@ const passageContext = {
   }
 };
 
+const themeTopics = {
+  "2-3": [{
+    id: "profetie",
+    label: "Thema: profetie vandaag",
+    title: "Spreekt God vandaag nog door profetie?",
+    intro: "Drie christelijke benaderingen vanuit 1 Korinthe 14",
+    content: `<p>Bijbelse profetie is meer dan de toekomst voorspellen. Een profeet spreekt namens God, roept mensen terug en kan bekendmaken wat God gaat doen. Over profetie na de tijd van de apostelen denken trouwe christenen verschillend.</p>
+      <h3>1. De cessationistische positie</h3>
+      <p>Cessationisten geloven dat openbarende tekenen zoals profetie vooral hoorden bij de unieke fundering van de kerk door apostelen en profeten. Nu de apostolische boodschap in de Bijbel is gegeven, verwachten zij geen nieuwe profetische woorden meer. God leidt nog steeds door zijn Woord, wijsheid, gebed en voorzienigheid, maar niemand mag zeggen: “Dit is een nieuwe boodschap van God.” Zij benadrukken vooral de genoegzaamheid en veiligheid van de Schrift.</p>
+      <h3>2. De charismatische positie</h3>
+      <p>Charismatische christenen geloven doorgaans dat de gave van profetie blijft functioneren. Zij wijzen erop dat Paulus de gemeente oproept ernaar te streven, profetieën te wegen en niet iedereen zomaar te geloven (1 Korinthe 14:1, 29; 1 Thessalonicenzen 5:19–21). Een profetisch woord kan bemoedigen, terechtwijzen of richting geven, maar mag nooit een ander evangelie brengen of boven de Bijbel staan.</p>
+      <h3>3. Een voorzichtige middenpositie</h3>
+      <p>Sommige gereformeerde en evangelische christenen staan open voor indrukken of woorden die de Geest geeft, maar noemen die bewust <em>toetsbaar en feilbaar</em>. De Bijbel alleen is onfeilbaar en gezaghebbend. Een indruk wordt daarom bescheiden gedeeld—“ik denk dat God dit op mijn hart legt”—en door anderen getoetst. Binnen de gereformeerde wereld bestaan zowel cessationistische als voorzichtig-charismatische overtuigingen; “gereformeerd” bepaalt deze vraag dus niet automatisch.</p>
+      <h3>Wat zegt 1 Korinthe 14 in elk geval?</h3>
+      <ul><li>Profetie moet Jezus en de gemeente dienen, niet de spreker groot maken.</li><li>Profetische uitspraken moeten worden getoetst.</li><li>God brengt geen chaos maar vrede en orde.</li><li>Geen hedendaags woord mag de Schrift verbeteren, tegenspreken of aanvullen met een ander evangelie.</li></ul>
+      <p><strong>Gespreksvraag:</strong> Hoe kun je ruimte laten voor Gods leiding zonder goedgelovig te worden of de Bijbel opzij te schuiven?</p>`
+  }],
+  "4": [{
+    id: "doop",
+    label: "Thema: kinderdoop en geloofsdoop",
+    title: "Wat zegt de doop: mijn keuze of Gods belofte?",
+    intro: "Twee accenten en de gereformeerde verbondslijn",
+    content: `<p>Marcus 1:4 beslist de discussie niet rechtstreeks. Johannes’ doop bereidt Israël voor op Jezus en is niet precies hetzelfde als de christelijke doop. Toch helpt dit vers om te vragen wat bekering, vergeving en doop met elkaar te maken hebben.</p>
+      <h3>Het geloofsdoopaccent</h3>
+      <p>Voorstanders van de geloofsdoop benadrukken de volgorde die in Handelingen vaak zichtbaar is: mensen horen het evangelie, geloven, bekeren zich en worden daarna gedoopt. De doop is zo het openbare antwoord en getuigenis van iemand die Jezus persoonlijk volgt. Zij verwijzen onder andere naar Handelingen 2:38, 8:36–38 en Romeinen 6:3–4.</p>
+      <h3>Het gereformeerde accent</h3>
+      <p>In de gereformeerde traditie is de doop allereerst een teken en zegel van <strong>Gods belofte</strong>, niet van de kracht van ons geloof. Zoals kinderen in het Oude Testament bij Gods verbond hoorden, worden ook kinderen van gelovigen tot de zichtbare verbondsgemeenschap gerekend. Daarbij worden Genesis 17:7, Handelingen 2:39, de huisdoop in Handelingen 16 en Kolossenzen 2:11–12 genoemd.</p>
+      <h3>Evangelisatie en kinderen zijn niet dezelfde situatie</h3>
+      <p>Wanneer Handelingen volwassenen tot geloof, bekering en doop oproept, bereikt het evangelie mensen die nog buiten de christelijke gemeente staan. Gereformeerden volgen diezelfde weg bij volwassen nieuwkomers. Bij kinderen is de vraag anders: hoe kijkt God naar kinderen die al binnen een gelovig gezin en de gemeente opgroeien? Paulus noemt kinderen van één gelovige ouder ‘heilig’—voor God apart gezet (1 Korinthe 7:14).</p>
+      <h3>Waarom gereformeerd?</h3>
+      <p>De gereformeerde keuze rust op de doorgaande lijn van <strong>genade en verbond</strong>. God begint, belooft en vormt een gemeenschap. Daarom vertelt de doop niet eerst hoe sterk mijn keuze voor God is, maar hoe genadig zijn keuze en belofte zijn. Deze lijn is al vroeg in de kerkgeschiedenis zichtbaar en werd eeuwenlang in het grootste deel van de kerk gevolgd. De doop redt echter niet automatisch en vervangt persoonlijk geloof nooit. Een gedoopt kind wordt juist opgeroepen Gods belofte zelf in geloof te omhelzen.</p>
+      <p><strong>Gespreksvraag:</strong> Wat verlies je wanneer de doop alleen over mijn keuze gaat—en wat verlies je wanneer persoonlijk geloof niet meer nodig lijkt?</p>`
+  }],
+  "8": [{
+    id: "geestesdoop",
+    label: "Thema: doop met de Heilige Geest",
+    title: "Heb jij de Heilige Geest ontvangen?",
+    intro: "Gereformeerd, charismatisch en geestelijk leven zonder uitersten",
+    content: `<p>Johannes maakt een scherp verschil: hij kan met water dopen, maar alleen Jezus kan de Heilige Geest geven. Christenen zijn het erover eens dat niemand zonder het werk van de Geest christen kan worden. Over het moment en de ervaring verschillen zij.</p>
+      <h3>Het gereformeerde accent</h3>
+      <p>Gereformeerde christenen verbinden de doop met de Geest doorgaans aan wedergeboorte en geloof. Wie werkelijk bij Christus hoort, heeft zijn Geest ontvangen; door één Geest worden gelovigen tot één lichaam gedoopt (Romeinen 8:9; 1 Korinthe 12:13). Dat hoeft niet samen te gaan met één spectaculaire ervaring. Wel worden gelovigen steeds opnieuw opgeroepen zich met de Geest te laten vervullen (Efeze 5:18).</p>
+      <h3>Het charismatische accent</h3>
+      <p>Veel pinkster- en charismatische christenen spreken daarnaast over een herkenbare doop of vervulling met de Geest als toerusting voor getuigenis en dienst. Zij wijzen op momenten in Handelingen waarop gelovigen kracht en gaven ontvangen. Sommigen verwachten daarbij tongentaal; anderen zien dat niet als noodzakelijk bewijs.</p>
+      <h3>Twee gevaren</h3>
+      <p>Een kerk kan zó bang zijn voor misbruik dat de Geest praktisch alleen nog een leerstuk wordt. Maar het Nieuwe Testament roept op de Geest niet uit te doven, zijn gaven te gebruiken en zijn kracht te verwachten. Het andere gevaar is dat bijzondere ervaringen of gaven het bewijs van geestelijke volwassenheid worden. Paulus wijst juist op liefde, het belijden van Jezus als Heer en de opbouw van de gemeente.</p>
+      <h3>Waaraan kun je zijn werk herkennen?</h3>
+      <p>De Geest verheerlijkt Jezus, overtuigt van zonde, wekt vertrouwen in Christus, getuigt van het kindschap, vormt liefde en andere vrucht, en geeft gaven om anderen te dienen. Een bijzondere ervaring kan echt en kostbaar zijn, maar een ervaring zonder liefde, gehoorzaamheid en vrucht is geen bewijs van volwassen geloof.</p>
+      <p><strong>Gespreksvraag:</strong> Verwacht jij werkelijk iets van de Heilige Geest—zonder Hem te verwarren met alleen gevoel of spektakel?</p>`
+  }]
+};
+
 const bookRoute = [
   ["1:1–15", "Het goede nieuws begint", "Jezus verschijnt, God maakt bekend wie Hij is en zijn Koninkrijk komt dichtbij.", true],
   ["1:16–45", "Jezus roept en herstelt", "De eerste leerlingen volgen Hem en Jezus laat zijn gezag en ontferming zien."],
@@ -541,7 +557,8 @@ let state = {
   group: null,
   groupPanel: false,
   groupMessage: "",
-  installHelp: false
+  installHelp: false,
+  theme: null
 };
 let deferredInstall;
 let groupTimer;
@@ -589,6 +606,17 @@ function groupOverlay() {
   </section></div>`;
 }
 
+function themeOverlay() {
+  if (!state.theme) return "";
+  const topic = Object.values(themeTopics).flat().find(item => item.id === state.theme);
+  if (!topic) return "";
+  return `<div class="overlay" data-action="close-theme"><section class="theme-panel" role="dialog" aria-modal="true" aria-labelledby="theme-title" data-theme-dialog>
+    <button class="close-panel" data-action="close-theme" aria-label="Sluiten">×</button>
+    <p class="eyebrow">Verdiepend thema</p><h2 id="theme-title">${topic.title}</h2><p class="theme-intro">${topic.intro}</p>
+    <div class="theme-content">${topic.content}</div>
+  </section></div>`;
+}
+
 function renderHome() {
   state.current = null;
   app.innerHTML = `<div class="shell">${header()}${installOverlay()}
@@ -621,7 +649,7 @@ function scriptureContext(activePassage) {
 
 function renderStudy() {
   const p = passages.find(item => item.id === state.current) || passages[0];
-  app.innerHTML = `<div class="shell">${header()}${installOverlay()}<main class="study">
+  app.innerHTML = `<div class="shell">${header()}${installOverlay()}${themeOverlay()}<main class="study">
     <button class="back" data-action="home">← Heel Marcus</button>
     <header class="study-head"><p class="book-path">Marcus <span>›</span> Het goede nieuws begint</p><p class="reference">${p.ref}</p><h1>${p.title}</h1><p class="summary">${p.summary}</p></header>
     <section class="translation-reader" aria-label="Bijbelvertaling">
@@ -634,7 +662,7 @@ function renderStudy() {
       <p class="scroll-cue">Scroll in de tekst om ervoor en erna te lezen</p>
     </section>
     <nav class="tabs" aria-label="Onderdelen">
-      ${[["ontdek","Ontdek"],["doordenk","Denk verder"],["uitleg","Uitleg & quotes"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""} ${id === "uitleg" && quotes[p.id] ? "has-extra" : ""}" data-tab="${id}">${label}</button>`).join("")}
+      ${[["ontdek","Ontdek"],["doordenk","Denk verder"],["uitleg","Uitleg & quotes"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""} ${id === "uitleg" && (quotes[p.id] || themeTopics[p.id]) ? "has-extra" : ""}" data-tab="${id}">${label}</button>`).join("")}
     </nav>
     ${state.tab === "tekst" ? "" : `<section class="panel">${panel(p)}</section>`}
   </main></div>`;
@@ -657,13 +685,13 @@ function panel(p) {
       ${!showEverything && p.questions.length > featured.length ? `<button class="reveal" data-action="all-questions">Toon alle ${p.questions.length} vragen</button>` : ""}`;
   }
   if (state.tab === "doordenk") return `${passageContext[p.id] ? `<aside class="context-card"><span>WAAR ZIJN WE?</span><h3>${passageContext[p.id].title}</h3><p>${passageContext[p.id].text}</p></aside>` : ""}<p class="eyebrow">Laat de stilte werken</p><h2>Maak het persoonlijk</h2><div class="question-card primary"><span class="question-count">INDRINGENDE VRAAG</span><p>${p.primary}</p></div><p>Geef niet te snel zelf antwoord. Vraag door met: <em>“Wat maakt dat je dat zegt?”</em> of <em>“Waar zie je dat in de tekst?”</em></p>${mediaLinks[p.id] ? `<a class="media-link" href="${mediaLinks[p.id].url}" target="_blank" rel="noopener noreferrer"><span class="media-icon">▶</span><span><strong>${mediaLinks[p.id].title}</strong><small>${mediaLinks[p.id].description}</small></span><span class="media-arrow">↗</span></a>` : ""}<div class="panel-divider"></div><p class="eyebrow">De Bijbel legt de Bijbel uit</p><h2>Verder lezen</h2><div class="refs">${p.refs.map(([ref, note]) => `<div class="ref-card"><strong>${ref}</strong><span>${note}</span></div>`).join("")}</div>`;
-  if (state.tab === "uitleg") return `<p class="eyebrow">Na het ontdekken</p><h2>Achtergrond en uitleg</h2>${state.revealed ? `<div class="explanation">${p.explanation}</div>` : `<p>Open de uitleg pas nadat jullie zelf goed hebben gekeken en gedacht.</p><button class="reveal" data-action="reveal">Wij hebben eerst zelf ontdekt — open uitleg</button>`}${quotes[p.id] ? `<div class="panel-divider"></div><p class="eyebrow">Om te laten landen</p><h2>Quotes en kernzinnen</h2><div class="quotes">${quotes[p.id].map(item => `<blockquote class="quote-card"><p>“${item.text}”</p><cite>${item.source}</cite></blockquote>`).join("")}</div>` : ""}`;
+  if (state.tab === "uitleg") return `<p class="eyebrow">Na het ontdekken</p><h2>Achtergrond en uitleg</h2>${state.revealed ? `<div class="explanation">${p.explanation}</div>` : `<p>Open de uitleg pas nadat jullie zelf goed hebben gekeken en gedacht.</p><button class="reveal" data-action="reveal">Wij hebben eerst zelf ontdekt — open uitleg</button>`}${themeTopics[p.id] ? `<div class="theme-buttons">${themeTopics[p.id].map(topic => `<button class="theme-button" data-theme="${topic.id}"><span><small>VERDIEPING</small><strong>${topic.label}</strong></span><b>Open →</b></button>`).join("")}</div>` : ""}${quotes[p.id] ? `<div class="panel-divider"></div><p class="eyebrow">Om te laten landen</p><h2>Quotes en kernzinnen</h2><div class="quotes">${quotes[p.id].map(item => `<blockquote class="quote-card"><p>“${item.text}”</p><cite>${item.source}</cite></blockquote>`).join("")}</div>` : ""}`;
   const note = storage.read(`marcus-note-${p.id}`, "");
   return `<p class="eyebrow">Alleen op dit apparaat</p><h2>Notities</h2><p>Wat raakte je, welke vraag bleef hangen en wat wil je onthouden?</p><textarea class="note-area" data-note="${p.id}" placeholder="Schrijf hier je notities…">${escapeHtml(note)}</textarea><p class="note-status" aria-live="polite"></p>`;
 }
 
 function openPassage(id) {
-  state.current = id; state.tab = "tekst"; state.revealed = false; state.showAllQuestions = false; renderStudy(); window.scrollTo(0, 0);
+  state.current = id; state.tab = "tekst"; state.revealed = false; state.showAllQuestions = false; state.theme = null; renderStudy(); window.scrollTo(0, 0);
 }
 
 function voteButton(passageId, questionIndex) {
@@ -748,6 +776,10 @@ function bind() {
     focusPanelAfterRender = true;
     renderStudy();
   }));
+  app.querySelectorAll("[data-theme]").forEach(button => button.addEventListener("click", () => {
+    state.theme = button.dataset.theme;
+    renderStudy();
+  }));
   app.querySelectorAll("[data-translation]").forEach(button => button.addEventListener("click", () => {
     state.translation = button.dataset.translation;
     storage.write("marcus-translation", state.translation);
@@ -757,6 +789,7 @@ function bind() {
     const action = button.dataset.action;
     if (action === "group-panel") { state.groupPanel = true; state.groupMessage = ""; return state.current ? renderStudy() : renderHome(); }
     if (action === "close-install") { state.installHelp = false; return state.current ? renderStudy() : renderHome(); }
+    if (action === "close-theme") { if (button.hasAttribute("data-theme-dialog")) return; state.theme = null; return renderStudy(); }
     if (action === "close-group") { if (button.hasAttribute("data-group-dialog")) return; state.groupPanel = false; return state.current ? renderStudy() : renderHome(); }
     if (action === "start-group") return startGroup();
     if (action === "join-group") {
@@ -775,6 +808,7 @@ function bind() {
   }));
   app.querySelector("[data-group-dialog]")?.addEventListener("click", event => event.stopPropagation());
   app.querySelector("[data-install-dialog]")?.addEventListener("click", event => event.stopPropagation());
+  app.querySelector("[data-theme-dialog]")?.addEventListener("click", event => event.stopPropagation());
   app.querySelectorAll("[data-vote]").forEach(button => button.addEventListener("click", async () => {
     try {
       state.group = await groupRequest(`/api/group/vote`, { method: "POST", body: JSON.stringify({ clientId, passageId: state.current, questionIndex: Number(button.dataset.vote) }) });

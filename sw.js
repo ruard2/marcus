@@ -1,5 +1,5 @@
-const CACHE = "ontdek-marcus-v18";
-const ASSETS = ["/", "/index.html", "/styles.css?v=18", "/app.js?v=18", "/manifest.webmanifest", "/icon.svg"];
+const CACHE = "ontdek-marcus-v19";
+const ASSETS = ["/", "/index.html", "/styles.css?v=19", "/app.js?v=19", "/manifest.webmanifest", "/icon.svg"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
