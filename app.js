@@ -502,6 +502,24 @@ const passageContext = {
   }
 };
 
+const bookRoute = [
+  ["1:1–15", "Het goede nieuws begint", "Jezus verschijnt, God maakt bekend wie Hij is en zijn Koninkrijk komt dichtbij.", true],
+  ["1:16–45", "Jezus roept en herstelt", "De eerste leerlingen volgen Hem en Jezus laat zijn gezag en ontferming zien."],
+  ["2:1–3:6", "Genade roept weerstand op", "Jezus vergeeft, roept onverwachte mensen en botst met religieuze zekerheden."],
+  ["3:7–35", "Een nieuwe familie", "Menigten komen naar Jezus en Hij vormt een gemeenschap rond Gods wil."],
+  ["4:1–41", "Luisteren naar het Koninkrijk", "Gelijkenissen over Gods Koninkrijk en een storm die gehoorzaamt."],
+  ["5:1–43", "Sterker dan angst en dood", "Jezus bevrijdt, geneest en wekt een gestorven meisje op."],
+  ["6:1–56", "Verworpen en toch voorzienend", "Ongeloof, de uitzending van de twaalf en brood voor de menigte."],
+  ["7:1–8:21", "Wat maakt een mens rein?", "Jezus kijkt naar het hart en opent grenzen die mensen gesloten hielden."],
+  ["8:22–9:29", "Wie is Jezus?", "De leerlingen gaan zien wie Hij is, maar moeten nog leren wat zijn weg betekent."],
+  ["9:30–10:31", "De weg van dienen", "Groot zijn blijkt dienen, ontvangen en loslaten."],
+  ["10:32–52", "Op weg naar Jeruzalem", "Jezus kiest bewust de weg van lijden en leert zijn leerlingen werkelijk zien."],
+  ["11:1–12:44", "De Koning in de tempel", "Jezus komt Jeruzalem binnen en legt geloof, macht en liefde bloot."],
+  ["13:1–37", "Blijf wakker", "Jezus spreekt over verdrukking, hoop en waakzaam leven."],
+  ["14:1–72", "De nacht van overgave", "Maaltijd, gebed, verraad en verloochening—Jezus blijft zijn weg gaan."],
+  ["15:1–16:8", "Kruis en opstanding", "De gekruisigde Zoon van God leeft: het graf is leeg en het nieuws moet verder."]
+];
+
 const storage = {
   read(key, fallback) {
     try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
@@ -571,19 +589,18 @@ function renderHome() {
   app.innerHTML = `<div class="shell">${header()}${installOverlay()}
     <section class="hero">
       <div>
-        <p class="eyebrow">Marcus 1:1–15 · Avond 1</p>
-        <h1>Kijk. Denk. Ontdek.</h1>
-        <p class="lead">Lees niet alleen wat er staat, maar ontdek wie Jezus is, wat Hij brengt en welk antwoord Hij van jou vraagt.</p>
+        <p class="eyebrow">Samen door het evangelie</p>
+        <h1>Ontdek Marcus.</h1>
+        <p class="lead">Volg het hele verhaal van Jezus. Open een gedeelte, lees het in samenhang en ontdek vers voor vers wie Hij is.</p>
       </div>
       <aside class="hero-card"><strong>Centrale vraag</strong><blockquote>God is in Jezus naar jou toe gekomen. Welk antwoord geef jij Hem?</blockquote></aside>
     </section>
     <main class="home">
-      <div class="section-head"><div><p class="eyebrow">Vers voor vers</p><h2>De ontdekroute</h2></div></div>
-      <div class="cards">${passages.map((p, index) => `<article class="passage-card">
-        <div class="card-top"><span class="number">${index + 1}</span></div>
-        <h3>${p.title}</h3><p>${p.ref} · ${p.summary}</p>
-        <button class="open-card" data-open="${p.id}">Open dit gedeelte →</button>
-      </article>`).join("")}</div>
+      <div class="section-head"><div><p class="eyebrow">De route door het boek</p><h2>Het verhaal van Jezus</h2></div><span class="route-count">15 avonden</span></div>
+      <div class="book-route">${bookRoute.map(([ref, title, summary, available], index) => available
+        ? `<button class="route-item is-available" data-open="1"><span class="route-number">${index + 1}</span><span class="route-copy"><small>Marcus ${ref} · Nu beschikbaar</small><strong>${title}</strong><span>${summary}</span></span><span class="route-arrow">→</span></button>`
+        : `<div class="route-item is-upcoming" aria-disabled="true"><span class="route-number">${index + 1}</span><span class="route-copy"><small>Marcus ${ref}</small><strong>${title}</strong><span>${summary}</span></span><span class="route-status">Volgt</span></div>`
+      ).join("")}</div>
     </main>
     <p class="install-help">Je vertaalkeuze en notities blijven alleen op dit apparaat bewaard. Deze app werkt na het eerste bezoek ook offline.</p>
   </div>`;
@@ -600,8 +617,8 @@ function scriptureContext(activePassage) {
 function renderStudy() {
   const p = passages.find(item => item.id === state.current) || passages[0];
   app.innerHTML = `<div class="shell">${header()}${installOverlay()}<main class="study">
-    <button class="back" data-action="home">← Terug naar overzicht</button>
-    <header class="study-head"><p class="reference">${p.ref}</p><h1>${p.title}</h1><p class="summary">${p.summary}</p></header>
+    <button class="back" data-action="home">← Heel Marcus</button>
+    <header class="study-head"><p class="book-path">Marcus <span>›</span> Het goede nieuws begint</p><p class="reference">${p.ref}</p><h1>${p.title}</h1><p class="summary">${p.summary}</p></header>
     <section class="translation-reader" aria-label="Bijbelvertaling">
       <div class="translation-tabs" role="tablist" aria-label="Kies Bijbelvertaling">
         ${Object.keys(translations[p.id]).map(name => `<button role="tab" aria-selected="${state.translation === name ? "true" : "false"}" class="translation-tab ${state.translation === name ? "active" : ""}" data-translation="${name}">${name}</button>`).join("")}
