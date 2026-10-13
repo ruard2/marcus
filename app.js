@@ -475,6 +475,33 @@ const mediaLinks = {
   }
 };
 
+const passageContext = {
+  "1": {
+    title: "De openingszin van het evangelie",
+    text: "Marcus geeft aan het begin meteen zijn conclusie: dit verhaal is goed nieuws en Jezus is de Christus, de Zoon van God. De rest van het boek laat stap voor stap zien wat die woorden betekenen."
+  },
+  "2-3": {
+    title: "Eerst wordt de weg voorbereid",
+    text: "Voordat Jezus zelf optreedt, verbindt Marcus zijn komst met Gods eeuwenoude beloften. Johannes staat op de drempel tussen verwachting en vervulling."
+  },
+  "9": {
+    title: "Jezus verschijnt in het verhaal",
+    text: "Na de voorbereiding door Johannes komt Jezus voor het eerst zelf in beeld. Marcus begint niet met een wonder of toespraak, maar met Jezus die tussen de mensen in het water gaat staan."
+  },
+  "10-11": {
+    title: "God maakt bekend wie Jezus is",
+    text: "Nog vóór Jezus publiek onderwijst of wonderen doet, spreekt de Vader zijn identiteit uit en rust de Geest Hem toe. Vanuit deze identiteit begint zijn opdracht."
+  },
+  "14": {
+    title: "Van voorbereiding naar Jezus’ optreden",
+    text: "Met de gevangenneming van Johannes eindigt de voorbereiding. Jezus gaat naar Galilea en neemt de verkondiging over; vanaf hier staat zijn optreden centraal."
+  },
+  "15": {
+    title: "De kern van Jezus’ eerste boodschap",
+    text: "Dit vers vat Jezus’ verkondiging samen: Gods beslissende tijd is gekomen, zijn koningschap is dichtbij en mensen worden opgeroepen tot bekering en geloof."
+  }
+};
+
 const storage = {
   read(key, fallback) {
     try { return JSON.parse(localStorage.getItem(key)) ?? fallback; } catch { return fallback; }
@@ -484,7 +511,8 @@ const storage = {
 
 let state = {
   current: null,
-  tab: "ontdek",
+  tab: "tekst",
+  translation: storage.read("marcus-translation", "NBV21"),
   revealed: false,
   showAllQuestions: false,
   completed: storage.read("marcus-completed", []),
@@ -571,13 +599,16 @@ function renderStudy() {
   app.innerHTML = `<div class="shell">${header()}${installOverlay()}<main class="study">
     <button class="back" data-action="home">← Terug naar overzicht</button>
     <header class="study-head"><p class="reference">${p.ref}</p><h1>${p.title}</h1><p class="summary">${p.summary}</p></header>
-    <section class="translation-stack" aria-label="Bijbelvertalingen">
-      ${Object.entries(translations[p.id]).map(([name, text]) => `<article class="translation"><strong>${name}</strong><p>${text}</p></article>`).join("")}
+    <section class="translation-reader" aria-label="Bijbelvertaling">
+      <div class="translation-tabs" role="tablist" aria-label="Kies Bijbelvertaling">
+        ${Object.keys(translations[p.id]).map(name => `<button role="tab" aria-selected="${state.translation === name ? "true" : "false"}" class="translation-tab ${state.translation === name ? "active" : ""}" data-translation="${name}">${name}</button>`).join("")}
+      </div>
+      <article class="translation active-translation"><p>${translations[p.id][state.translation]}</p></article>
     </section>
     <nav class="tabs" aria-label="Onderdelen">
-      ${[["ontdek","Ontdek"],["doordenk","Denk door"],["uitleg","Uitleg"], ...(quotes[p.id] ? [["quotes","Quotes"]] : []), ["verder","Verder lezen"],["notitie","Mijn antwoord"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
+      ${[["tekst","Tekst"],["ontdek","Ontdek"],["doordenk","Denk door"],["uitleg","Uitleg"], ...(quotes[p.id] ? [["quotes","Quotes"]] : []), ["verder","Verder lezen"],["notitie","Notities"]].map(([id,label]) => `<button class="tab ${state.tab === id ? "active" : ""}" data-tab="${id}">${label}</button>`).join("")}
     </nav>
-    <section class="panel">${panel(p)}</section>
+    ${state.tab === "tekst" ? "" : `<section class="panel">${panel(p)}</section>`}
     <footer class="study-footer">
       <button class="nav-btn" data-action="previous" ${index === 0 ? "disabled" : ""}>← Vorige</button>
       <button class="nav-btn complete ${isDone ? "is-done" : ""}" data-action="complete">${isDone ? "✓ Afgerond" : "Markeer als afgerond"}</button>
@@ -598,16 +629,16 @@ function panel(p) {
       ${visible.map((q, i) => `<div class="question-card vote-question"><div><span class="question-count">VRAAG ${i + 1}</span><p>${q.text}</p></div>${state.group ? voteButton(p.id, q.index) : ""}</div>`).join("")}
       ${!showEverything && p.questions.length > featured.length ? `<button class="reveal" data-action="all-questions">Toon alle ${p.questions.length} vragen</button>` : ""}`;
   }
-  if (state.tab === "doordenk") return `<p class="eyebrow">Laat de stilte werken</p><h2>Maak het persoonlijk</h2><div class="question-card primary"><span class="question-count">INDRINGENDE VRAAG</span><p>${p.primary}</p></div><p>Geef niet te snel zelf antwoord. Vraag door met: <em>“Wat maakt dat je dat zegt?”</em> of <em>“Waar zie je dat in de tekst?”</em></p>${mediaLinks[p.id] ? `<a class="media-link" href="${mediaLinks[p.id].url}" target="_blank" rel="noopener noreferrer"><span class="media-icon">▶</span><span><strong>${mediaLinks[p.id].title}</strong><small>${mediaLinks[p.id].description}</small></span><span class="media-arrow">↗</span></a>` : ""}`;
+  if (state.tab === "doordenk") return `${passageContext[p.id] ? `<aside class="context-card"><span>WAAR ZIJN WE?</span><h3>${passageContext[p.id].title}</h3><p>${passageContext[p.id].text}</p></aside>` : ""}<p class="eyebrow">Laat de stilte werken</p><h2>Maak het persoonlijk</h2><div class="question-card primary"><span class="question-count">INDRINGENDE VRAAG</span><p>${p.primary}</p></div><p>Geef niet te snel zelf antwoord. Vraag door met: <em>“Wat maakt dat je dat zegt?”</em> of <em>“Waar zie je dat in de tekst?”</em></p>${mediaLinks[p.id] ? `<a class="media-link" href="${mediaLinks[p.id].url}" target="_blank" rel="noopener noreferrer"><span class="media-icon">▶</span><span><strong>${mediaLinks[p.id].title}</strong><small>${mediaLinks[p.id].description}</small></span><span class="media-arrow">↗</span></a>` : ""}`;
   if (state.tab === "uitleg") return `<p class="eyebrow">Na het ontdekken</p><h2>Achtergrond en uitleg</h2>${state.revealed ? `<div class="explanation">${p.explanation}</div>` : `<p>Open de uitleg pas nadat jullie zelf goed hebben gekeken en gedacht.</p><button class="reveal" data-action="reveal">Wij hebben eerst zelf ontdekt — open uitleg</button>`}`;
   if (state.tab === "quotes") return `<p class="eyebrow">Om te laten landen</p><h2>Quotes en kernzinnen</h2><div class="quotes">${quotes[p.id].map(item => `<blockquote class="quote-card"><p>“${item.text}”</p><cite>${item.source}</cite></blockquote>`).join("")}</div>`;
   if (state.tab === "verder") return `<p class="eyebrow">De Bijbel legt de Bijbel uit</p><h2>Verder lezen</h2><div class="refs">${p.refs.map(([ref, note]) => `<div class="ref-card"><strong>${ref}</strong><span>${note}</span></div>`).join("")}</div>`;
   const note = storage.read(`marcus-note-${p.id}`, "");
-  return `<p class="eyebrow">Alleen op dit apparaat</p><h2>Mijn antwoord</h2><p>Wat raakte je, welke vraag bleef hangen en wat wil je hiermee doen?</p><textarea class="note-area" data-note="${p.id}" placeholder="Schrijf hier je gedachten…">${escapeHtml(note)}</textarea><p class="note-status" aria-live="polite"></p>`;
+  return `<p class="eyebrow">Alleen op dit apparaat</p><h2>Notities</h2><p>Wat raakte je, welke vraag bleef hangen en wat wil je onthouden?</p><textarea class="note-area" data-note="${p.id}" placeholder="Schrijf hier je notities…">${escapeHtml(note)}</textarea><p class="note-status" aria-live="polite"></p>`;
 }
 
 function openPassage(id) {
-  state.current = id; state.tab = "ontdek"; state.revealed = false; state.showAllQuestions = false; renderStudy(); window.scrollTo(0, 0);
+  state.current = id; state.tab = "tekst"; state.revealed = false; state.showAllQuestions = false; renderStudy(); window.scrollTo(0, 0);
 }
 
 function voteButton(passageId, questionIndex) {
@@ -683,6 +714,11 @@ async function joinGlobalGroup() {
 function bind() {
   app.querySelectorAll("[data-open]").forEach(button => button.addEventListener("click", () => openPassage(button.dataset.open)));
   app.querySelectorAll("[data-tab]").forEach(button => button.addEventListener("click", () => { state.tab = button.dataset.tab; renderStudy(); }));
+  app.querySelectorAll("[data-translation]").forEach(button => button.addEventListener("click", () => {
+    state.translation = button.dataset.translation;
+    storage.write("marcus-translation", state.translation);
+    renderStudy();
+  }));
   app.querySelectorAll("[data-action]").forEach(button => button.addEventListener("click", async () => {
     const action = button.dataset.action;
     if (action === "group-panel") { state.groupPanel = true; state.groupMessage = ""; return state.current ? renderStudy() : renderHome(); }
@@ -754,7 +790,15 @@ function bind() {
 
 window.addEventListener("beforeinstallprompt", event => { event.preventDefault(); deferredInstall = event; state.current ? renderStudy() : renderHome(); });
 window.addEventListener("appinstalled", () => { deferredInstall = null; });
-if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js"));
+if ("serviceWorker" in navigator) {
+  let refreshingForUpdate = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (refreshingForUpdate) return;
+    refreshingForUpdate = true;
+    location.reload();
+  });
+  window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js", { updateViaCache: "none" }).then(registration => registration.update()).catch(() => {}));
+}
 if (navigator.storage?.persist) navigator.storage.persist().catch(() => {});
 renderHome();
 
